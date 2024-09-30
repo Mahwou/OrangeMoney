@@ -1,0 +1,28 @@
+{
+    "name": "courage/orange-money",
+    "description": "A Laravel package for USSD ORANGE payment API",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Courage\\OrangeMoney\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "courage mahwou",
+            "email": "ndimbucourage@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Courage\\OrangeMoney\\Providers\\UssdOrangeMoneyServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    }
+}

@@ -33,6 +33,7 @@ final class Api
     private string $channelUserMsisdn;
     private string $xAuthToken;
     private string $notifUrl;
+    private string $baseCheckPayUrl = "https://api-s1.orange.cm/omcoreapis/1.0.2/mp/paymentstatus/";
 
     /**
      * @throws AuthenticationException
@@ -84,7 +85,7 @@ final class Api
     {
         $payToken = $this->initPayment();
 
-        $id = "OM_0".rand(100000,900000)."_00".rand(10000,90000);
+        $orderId = "OM_0".rand(100000,900000)."_00".rand(10000,90000);
 
         $defaultData = [
             'pin' => $this->pin,
@@ -93,8 +94,8 @@ final class Api
             'notifUrl' => $this->notifUrl,
             'amount' => 0,
             'subscriberMsisdn' => "",
-            'orderId' => $id,
-            'description' => "I am paying for this order $id",
+            'orderId' => $orderId,
+            'description' => "I am paying for this order $orderId",
         ];
         $data = array_merge($defaultData, $data);
 
@@ -105,6 +106,23 @@ final class Api
             ])
             ->withToken($this->accessToken)
             ->post($this->basePayUrl, $data);
+
+        return $response->json();
+    }
+
+    /**
+     * @param string $payToken
+     * @return array
+     */
+    public function checkPaymentStatus(string $payToken): array
+    {
+        $response = Http::acceptJson()
+            ->withHeaders([
+                'X-AUTH-TOKEN' => $this->xAuthToken,
+                'Content-Type' => 'application/json',
+            ])
+            ->withToken($this->accessToken)
+            ->get($this->baseCheckPayUrl. $payToken);
 
         return $response->json();
     }

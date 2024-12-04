@@ -2,6 +2,7 @@
 
 namespace Courage\OrangeMoney\Provider;
 
+use Courage\OrangeMoney\OrangeMoney;
 use Illuminate\Support\ServiceProvider;
 
 final class UssdOrangeMoneyServiceProvider extends ServiceProvider
@@ -32,5 +33,17 @@ final class UssdOrangeMoneyServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../config/orange_money_ussd.php', 'orange_money_ussd'
         );
+    }
+
+    /**
+     * Register the facades.
+     *
+     * @return void
+     */
+    public function registerFacades(): void
+    {
+        $this->app->singleton('OrangeMoney', function ($app) {
+            return new OrangeMoney();
+        });
     }
 }

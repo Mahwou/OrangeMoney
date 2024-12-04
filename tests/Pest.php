@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -23,6 +24,8 @@
 | to assert different things. Of course, you may extend the Expectation API at any time.
 |
 */
+
+uses(\Tests\TestCase::class)->in(__DIR__);
 
 expect()->extend('toBeOne', function () {
     return $this->toBe(1);

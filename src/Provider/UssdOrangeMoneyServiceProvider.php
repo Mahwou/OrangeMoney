@@ -1,6 +1,6 @@
 <?php
 
-namespace Courage\OrangeMoney\Providers;
+namespace Courage\OrangeMoney\Provider;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,5 +1,6 @@
 <?php
 
+use Courage\OrangeMoney\Exceptions\ErrorRetrievingTransactionStatus;
 use Courage\OrangeMoney\OrangeMoney;
 
 test("payment can be made", function () {
@@ -10,7 +11,9 @@ test("payment can be made", function () {
     $this->assertArrayHasKey('payToken', $response);
 });
 
-
+/**
+ * @throws ErrorRetrievingTransactionStatus
+ */
 test("payment can be verified", function () {
     $om = new OrangeMoney();
 

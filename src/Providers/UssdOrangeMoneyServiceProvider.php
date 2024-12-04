@@ -4,7 +4,7 @@ namespace Courage\OrangeMoney\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class UssdOrangeMoneyServiceProvider extends ServiceProvider
+final class UssdOrangeMoneyServiceProvider extends ServiceProvider
 {
 
     /**
@@ -17,7 +17,7 @@ class UssdOrangeMoneyServiceProvider extends ServiceProvider
 
         // Publish configurations
         $this->publishes([
-            __DIR__.'/../config/orange_money.php' => config_path('orange_money.php'),
+            __DIR__.'/../config/orange_money_ussd.php' => config_path('orange_money_ussd.php'),
         ]);
     }
 
@@ -30,7 +30,7 @@ class UssdOrangeMoneyServiceProvider extends ServiceProvider
     {
         // Merge package config with app config
         $this->mergeConfigFrom(
-            __DIR__.'/../config/orange_money.php', 'orange_money'
+            __DIR__.'/../config/orange_money_ussd.php', 'orange_money_ussd'
         );
     }
 }

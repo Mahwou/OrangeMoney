@@ -40,19 +40,12 @@ final class Api
      */
     public function __construct()
     {
-//        $userName = config('orange_money_ussd.OM_USERNAME');
-//        $userPassword = config('orange_money_ussd.OM_PASSWORD');
-//        $this->pin = config('orange_money_ussd.OM_PIN');
-//        $this->channelUserMsisdn = config('orange_money_ussd.OM_CHANNEL_USER_MSISDN');
-//        $this->xAuthToken = config('orange_money_ussd.OM_X_AUTH_TOKEN');
-//        $this->notifUrl = config('orange_money_ussd.OM_NOTIF_URL');
-
-        $userName = "wMQ7fsW6CwGUI99R81VagoxGsBwa";
-        $userPassword = "WLeMfF5xpq7kp1yN5rJ4Y5EqVBca";
-        $this->pin = "6522";
-        $this->channelUserMsisdn = "655650022";
-        $this->xAuthToken = "WU5PVEVIRUFEOllOT1RFSEVBRDIwMjA";
-        $this->notifUrl = "https://www.ynote.cm/notification";
+        $userName = config('orange_money_ussd.OM_USERNAME');
+        $userPassword = config('orange_money_ussd.OM_PASSWORD');
+        $this->pin = config('orange_money_ussd.OM_PIN');
+        $this->channelUserMsisdn = config('orange_money_ussd.OM_CHANNEL_USER_MSISDN');
+        $this->xAuthToken = config('orange_money_ussd.OM_X_AUTH_TOKEN');
+        $this->notifUrl = config('orange_money_ussd.OM_NOTIF_URL');
 
         $response = Http::acceptJson()
             ->withHeaders([

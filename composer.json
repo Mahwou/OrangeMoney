@@ -1,11 +1,12 @@
 {
-    "name": "courage/orange-money",
+    "name": "courage/orangemoneyussd",
     "description": "A Laravel package for USSD ORANGE MONEY payment API",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Courage\\OrangeMoney\\": "src/"
+            "Courage\\OrangeMoney\\": "src/",
+            "Tests\\": "tests"
         }
     },
     "authors": [

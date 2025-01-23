@@ -8,6 +8,6 @@ class UssdOrangeMoney extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return "UssdOrangeMoney";
+        return "OrangeMoney";
     }
 }

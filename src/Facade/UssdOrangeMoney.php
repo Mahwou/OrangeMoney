@@ -1,6 +1,6 @@
 <?php
 
-namespace Courage\OrangeMoney\Facades;
+namespace Courage\OrangeMoney\Facade;
 
 use Illuminate\Support\Facades\Facade;
 

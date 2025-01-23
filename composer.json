@@ -20,8 +20,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Courage\\OrangeMoney\\Providers\\UssdOrangeMoneyServiceProvider"
-            ]
+                "Courage\\OrangeMoney\\Provider\\UssdOrangeMoneyServiceProvider"
+            ],
+          "aliases" : {
+            "UssdOrangeMoney": "Courage\\OrangeMoney\\Facade\\UssdOrangeMoney"
+          }
         }
     },
     "require": {

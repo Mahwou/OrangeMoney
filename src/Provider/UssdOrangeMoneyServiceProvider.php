@@ -42,7 +42,7 @@ final class UssdOrangeMoneyServiceProvider extends ServiceProvider
     public function registerFacades(): void
     {
         $this->app->singleton('UssdOrangeMoney', function ($app) {
-            return new \Courage\OrangeMoney\OrangeMoney();
+            return new \Courage\OrangeMoney\UssdOrangeMoney();
         });
     }
 }

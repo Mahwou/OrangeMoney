@@ -5,7 +5,7 @@ namespace Courage\OrangeMoney;
 use Courage\OrangeMoney\Exceptions\ErrorRetrievingTransactionStatus;
 use Courage\OrangeMoney\Exceptions\PaymentFailedException;
 
-class OrangeMoney
+class UssdOrangeMoney
 {
 
     private Api $api;

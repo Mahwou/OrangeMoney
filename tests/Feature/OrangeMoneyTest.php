@@ -1,10 +1,10 @@
 <?php
 
 use Courage\OrangeMoney\Exceptions\ErrorRetrievingTransactionStatus;
-use Courage\OrangeMoney\OrangeMoney;
+use Courage\OrangeMoney\UssdOrangeMoney;
 
 test("payment can be made", function () {
-    $om = new OrangeMoney();
+    $om = new UssdOrangeMoney();
 
     $response = makeOrangePayment($om);
 
@@ -15,7 +15,7 @@ test("payment can be made", function () {
  * @throws ErrorRetrievingTransactionStatus
  */
 test("payment can be verified", function () {
-    $om = new OrangeMoney();
+    $om = new UssdOrangeMoney();
 
     $response = makeOrangePayment($om);
 
@@ -25,10 +25,10 @@ test("payment can be verified", function () {
 });
 
 /**
- * @param OrangeMoney $om
+ * @param UssdOrangeMoney $om
  * @return array
  */
-function makeOrangePayment(OrangeMoney $om): array
+function makeOrangePayment(UssdOrangeMoney $om): array
 {
     $data = [
         'orderId' => "order1234",

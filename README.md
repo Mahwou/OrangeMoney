@@ -15,7 +15,7 @@ php artisan vendor:publish --provider "Courage\OrangeMoney\Provider\UssdOrangeMo
 ### CONFIGURATION
 
 - After installation, you will need to add your orange money settings. As shown bellow you will find in config/orange_money_ussd.php the various parameters, which you should update accordingly.
-```
+```php
 return [
 
     /*
@@ -42,7 +42,7 @@ return [
 ];
 ```
 - Add this to .env.example and .env
-```
+```php
 OM_USERNAME=
 OM_PASSWORD=
 OM_PIN=
@@ -53,7 +53,7 @@ OM_NOTIF_URL=
 ### Example usage
 
 #### Make a payment
-```
+```php
 use Courage\OrangeMoney\Facade\UssdOrangeMoney;
 
 $data = [
@@ -70,7 +70,7 @@ $response = $payment->pay($data);
 $payToken = $response['pay_token']
 ```
 #### Check transaction status
-```
+```php
 use Courage\OrangeMoney\Facade\UssdOrangeMoney;
 
 $payment = new UssdOrangeMoney();

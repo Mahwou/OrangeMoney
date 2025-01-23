@@ -2,7 +2,6 @@
 
 namespace Courage\OrangeMoney\Provider;
 
-use Courage\OrangeMoney\OrangeMoney;
 use Illuminate\Support\ServiceProvider;
 
 final class UssdOrangeMoneyServiceProvider extends ServiceProvider
@@ -43,7 +42,7 @@ final class UssdOrangeMoneyServiceProvider extends ServiceProvider
     public function registerFacades(): void
     {
         $this->app->singleton('UssdOrangeMoney', function ($app) {
-            return new OrangeMoney();
+            return new \Courage\OrangeMoney\OrangeMoney();
         });
     }
 }
